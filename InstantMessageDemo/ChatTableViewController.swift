@@ -113,24 +113,38 @@ class ChatTableViewController: UITableViewController,XxDl {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        return msgList.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("chatCell", forIndexPath: indexPath) as! UITableViewCell
 
-        // Configure the cell...
+        //去对应的消息
+        let msg = msgList[indexPath.row]
+        //对单元格文本格式做一个调整
+        if (msg.isMe){
+            //本人所发信息聚友，灰色
+            cell.textLabel?.textAlignment = .Right
+            cell.textLabel?.textColor = UIColor.grayColor()
+            
+        }else{
+            // 好友消息，橙色
+            cell.textLabel?.textColor = UIColor.orangeColor()
+            
+        }
+        //设定单元格的文本
+        cell.textLabel?.text = msg.body
 
         return cell
     }
-    */
+
 
     /*
     // Override to support conditional editing of the table view.

@@ -159,6 +159,18 @@
 			创建消息体，设置属性from，to 创建输入状态，
 			设置属性xmlns http://jabber.org/protocol/chatstates
 			消息体加入子节点输入状态
+		表格数据－聊天记录展现(聊天视图表格定制)
+			单元格:消息正文;行:消息数;部:1
+
+			获取消息：索引indexPath.row
+			isMe：本人所发
+			单元格文字居右：textAlignment
+			字体灰色：textColor
+			非本人：字体橙色
+			单元格：文本设置
+
+## 最终测试:XMPP协议
+	根据XML格式文本可以进行极其自由的扩展，语音，视频群等功能。
 
 #核心功能：
 * 登录
