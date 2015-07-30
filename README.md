@@ -140,37 +140,36 @@
 
 ## 聊天界面定制
 *  聊天视图过渡情报准备
-	A穿越: segue.identifier, segue.destinationViewController
-	B传递:
+	* A穿越: segue.identifier, segue.destinationViewController
+	* B传递:
 		逐条找出未读
 		找出当前好友的未读
 		添加到目标的消息中
-	C移除：
+	* C移除：
 		移除当前好友的未读信息
 		刷新表格
-	* 聊天删除好友的未读消息(泛型匹配) <T:Equatable>
-	* 聊天视图：
-	视图启动(viewDidLoad)
+* 聊天删除好友的未读消息(泛型匹配) <T:Equatable>
+* 聊天视图：
+	* 视图启动(viewDidLoad)
 		新方法：appDelegate 获取总代理
 		新属性：聊天对象的用户名
 		将总代理的消息代理设置为自己
-	代理方法：
+	* 代理方法：
 		新属性：消息数组
 		收到消息：判断是否正在输入isCompossing改变导航条标题，否则将导航条标题改成 聊天对象用户名
 		正文不为空则加入到消息数组 刷新表格
-	发送按钮点击：
+	* 发送按钮点击：
 		获取文本框文本，如不则为空，创建XML格式文本xmlmsg; 类型:DDXMLElement;增加属性:;
 		类型type聊天chat至to聊天对象的用户名来自from系统存储的登录用户名
 		子节点正文为body文本框文本
 		XML文本增加子节点addChild
 		总代理 发送XML文本，文本框清空，本条消息加入消息数组，是本人发送iSMe，刷新表格
-	发送正在输入的状态（文本框(editingChanged)）:
+	* 发送正在输入的状态（文本框(editingChanged)）:
 		创建消息体，设置属性from，to 创建输入状态，
 		设置属性xmlns http://jabber.org/protocol/chatstates
 		消息体加入子节点输入状态
-	表格数据－聊天记录展现(聊天视图表格定制)
+	* 表格数据－聊天记录展现(聊天视图表格定制)
 		单元格:消息正文;行:消息数;部:1
-	
 		获取消息：索引indexPath.row
 		isMe：本人所发
 		单元格文字居右：textAlignment
@@ -179,7 +178,7 @@
 		单元格：文本设置
 
 ## 最终测试:XMPP协议
-	* 根据XML格式文本可以进行极其自由的扩展，语音，视频群等功能。
+* 根据XML格式文本可以进行极其自由的扩展，语音，视频群等功能。
 
 #核心功能：
 * 登录
