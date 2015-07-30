@@ -1,13 +1,20 @@
 # Swift1.2 iPhone6 微信
 
+使用方法:
+* ' git clone https://github.com/yyn835314557/InstantMessageDemo.git ' 
+* 打开里面的Resource文件夹里面有(Adium_1.5.10.dmg,ejabberd-14.12)安装包进行安装
+* 用Xcode6.3打开(其他版本估计有些小错误,可以添加活着去掉感叹号)
+* 启动 /Application/ejabberd-14.12/bin/start 进行配置
+* 就可以打开iMessage，Adium，以及应用程序，可以进行通讯了
+			
 ***
 
 ## 服务器搭建
 	通讯协议:XMPP(eXtensible Messaging and Presence Protocol)
 	根据XML格式文本进行极其自由的扩展 语音，视频，群
 	* 基于XML
-		<message type="chat" from "xiao@swiftv.cn" to "bo@swiftv.cn">
-			<body>你好!</body>
+		<message type="chat" from "835314557@qq.com" to "yyn835314557@163.com">
+			<body>你好 iOS!</body>
 			</message>
 	* 安装和启动:
 		安装语言：simplified Chinese
