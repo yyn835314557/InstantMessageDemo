@@ -26,20 +26,26 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="好友列表" id="7RO-hW-bJg">
-                        <barButtonItem key="leftBarButtonItem" id="qqr-4l-Jf0"/>
+                        <barButtonItem key="leftBarButtonItem" title="..." id="qqr-4l-Jf0">
+                            <connections>
+                                <action selector="log:" destination="Fx1-rI-7Dw" id="8jV-3m-zkc"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="登录" id="wfP-NR-T5S">
                             <connections>
+                                <action selector="send:" destination="Fx1-rI-7Dw" id="xZ4-9P-gqd"/>
                                 <segue destination="tjQ-EQ-INp" kind="presentation" identifier="toLoginSegue" id="1IM-E3-rS6"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="mystatus" destination="qqr-4l-Jf0" id="uhT-mK-Z7V"/>
                         <segue destination="0Pz-aj-Y4Z" kind="show" identifier="toChatSegue" id="mbH-L6-oBc"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dfP-SL-ihz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1149" y="-38"/>
+            <point key="canvasLocation" x="1039" y="-38"/>
         </scene>
         <!--聊天-->
         <scene sceneID="BAI-KK-YbA">
@@ -54,6 +60,9 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <action selector="compossing:" destination="0Pz-aj-Y4Z" eventType="editingChanged" id="0kQ-kR-9YU"/>
+                            </connections>
                         </textField>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="yV5-qm-hyg">
@@ -76,12 +85,12 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="msgTF" destination="R2k-18-3ZL" id="G51-sn-aDP"/>
+                        <outlet property="msgTF" destination="jjL-XV-SWr" id="pzL-kn-jXe"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E7S-sp-Rfk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1143" y="631"/>
+            <point key="canvasLocation" x="1039" y="653"/>
         </scene>
         <!--用户登录-->
         <scene sceneID="nDz-3a-WHA">
@@ -108,7 +117,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="tom" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rf6-rm-eEv">
                                 <rect key="frame" x="73" y="190" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="byj-nc-s3x">
                                 <rect key="frame" x="100" y="102" width="51" height="31"/>

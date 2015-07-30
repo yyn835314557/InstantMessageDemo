@@ -18,6 +18,10 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var userTF: UITextField!
     @IBOutlet weak var pwdTF: UITextField!
     @IBOutlet weak var serverTF: UITextField!
+    
+    //需要登入
+    var requreLogin = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -49,6 +53,9 @@ class LoginViewController: UIViewController {
             NSUserDefaults.standardUserDefaults().setBool(self.autoLoginSwitch.on, forKey: "wxautologin")
             //用户同步配置
             NSUserDefaults.standardUserDefaults().synchronize()
+            
+            //需要登入
+            requreLogin = true
             
         }
     }

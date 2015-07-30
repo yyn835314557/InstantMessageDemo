@@ -78,7 +78,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, XMPPStreamDelegate {
     func xmppStreamDidConnect(sender: XMPPStream!) {
         isOpen = true
         //验证密码
-        xs.authenticateWithPassword(pwd, error: nil)
+        xs.authenticateWithPassword(pwd, error:nil)
     }
     
     //验证成功
@@ -124,7 +124,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, XMPPStreamDelegate {
             xs.hostName = server!
             //保存密码
             pwd = password!
-            xs.connectWithTimeout(5, error: nil)
+            xs.connectWithTimeout(5, error:nil)
             
         }
         
@@ -133,9 +133,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, XMPPStreamDelegate {
     
     //断开连接
     func disconnect(){
-        goOffline()
-        xs!.disconnect()
+        if (xs != nil) {
+            if xs!.isConnected(){
+                goOffline()
+                xs!.disconnect()
+            }
+        }
     }
+    
     
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
