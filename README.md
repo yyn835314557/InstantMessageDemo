@@ -52,7 +52,7 @@
 	* 好友列表到聊天：
 		1. 选择好友所在单元格时，先建立自定义过渡（push），preformSegueWithIdentifier
 		2. 好友列表代理聊天页面，prepareSegue过渡（推荐）
-* 导入XMPP库
+* 导入[XMPP库](https://github.com/robbiehanson/XMPPFramework)
 	* xmppframework 
 	* Project Buliding Settings: Header Serach Paths
 	* /usr/include/libxml2
